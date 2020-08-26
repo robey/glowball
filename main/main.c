@@ -102,8 +102,6 @@ static void cmd_reboot(const void *command_arg, int argc, const char * const *ar
 
 static void cmd_led(const void *command_arg, int argc, const char * const *argv) {
     gpio_set_level(THING_GPIO_LED, cli_is_truthy(argv[1]));
-
-    ws2812b_test();
 }
 
 static cli_command_t commands[] = {
