@@ -19,6 +19,7 @@
 nvs_handle_t s_nvs_handle;
 
 #define THING_GPIO_LED 5
+#define NEOPIXEL_GPIO 13
 
 
 static void cmd_mem(const void *command_arg, int argc, const char * const *argv) {
@@ -157,5 +158,5 @@ void app_main(void) {
 
     cli_init(UART_NUM_0, commands);
     http_server_start();
-    ws2812b_init(13);
+    ws2812b_init(RMT_CHANNEL_0, NEOPIXEL_GPIO);
 }
